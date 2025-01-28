@@ -1,0 +1,22 @@
+<div class="container">
+    <!-- Search Box -->
+    <div class="search-container">
+      <input 
+        type="text" 
+        [(ngModel)]="searchQuery" 
+        placeholder="Search technologies..." 
+        class="search-box" 
+      />
+      <button (click)="onSearch()" class="search-button">Search</button>
+    </div>
+  
+    <!-- Carousel -->
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <div class="carousel-item" *ngFor="let image of carouselImages">
+          <img [src]="image.src" [alt]="image.alt" class="carousel-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+  
