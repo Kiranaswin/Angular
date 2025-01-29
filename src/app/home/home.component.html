@@ -9,14 +9,17 @@
       />
       <button (click)="onSearch()" class="search-button">Search</button>
     </div>
-  
-    <!-- Carousel -->
-    <div class="carousel-container">
-      <div class="carousel-slide">
-        <div class="carousel-item" *ngFor="let image of carouselImages">
-          <img [src]="image.src" [alt]="image.alt" class="carousel-img" />
-        </div>
+  </div>
+  <div>
+</div>
+<div class="carousel-container">
+    <div class="carousel-slide">
+      <div class="card" *ngFor="let tech of techCards">
+        <h3>{{ tech.title }}</h3>
+        <p>{{ tech.description }}</p>
+        <a [href]="tech.link" target="_blank" class="learn-more">Learn More</a>
       </div>
     </div>
-  </div>
+</div>
+  
   

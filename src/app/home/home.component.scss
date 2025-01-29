@@ -1,10 +1,10 @@
 /* Container Styles */
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 50px;
     text-align: center;
-    background-color: #f5f5f5;
+    background-color: #cac3f3;
   }
   
   /* Search Box Styles */
@@ -45,54 +45,68 @@
     }
   }
   
-  /* Carousel Styles */
-  .carousel-container {
-    position: relative;
-    overflow: hidden;
+  /* Container */
+.carousel-container {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 150px 0;
   }
   
+  /* Slide Wrapper */
   .carousel-slide {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    width: 300%;
+    animation: slide-animation 10s infinite linear;
   }
   
-  .carousel-item {
-    flex: 0 0 100%;
+  /* Individual Card */
+  .card {
+    flex: 0 0 30%;
+    background: #ffffff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease-in-out;
   }
   
-  .carousel-img {
-    max-width: 100%;
-    max-height: 300px;
-    border-radius: 15px;
-    object-fit: cover;
+  .card:hover {
+    transform: scale(1.05);
   }
   
-  /* Add a keyframe animation for the carousel */
-  @keyframes slide-animation {
-    0% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-100%);
-    }
-    50% {
-      transform: translateX(-200%);
-    }
-    75% {
-      transform: translateX(-300%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  /* Card Image */
+  .card-img {
+    max-width: 80px;
+    margin-bottom: 15px;
   }
   
-  .carousel-container {
-    animation: slide-animation 12s infinite;
+  /* Learn More Button */
+  .learn-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background 0.3s;
   }
+  
+  .learn-more:hover {
+    background: #0056b3;
+  }
+  
+//   /* Keyframe Animation */
+//   @keyframes slide-animation {
+//     0% { transform: translateX(0); }
+//     100% { transform: translateX(-100%); }
+//   }
+  
+ 
   

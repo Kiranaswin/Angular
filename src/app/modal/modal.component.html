@@ -1,0 +1,28 @@
+<div class="modal" *ngIf="isVisible">
+    <div class="modal-content">
+      <h2>{{ learner.id === 0 ? 'Create New Learner' : 'Edit Learner' }}</h2>
+      
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" [(ngModel)]="learner.name" name="name" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="topics">Topics</label>
+          <input type="text" id="topics" [(ngModel)]="learner.topics" name="topics" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="percentage">Percentage</label>
+          <input type="number" id="percentage" [(ngModel)]="learner.percentage" name="percentage" required />
+        </div>
+      </form>
+  
+      <div class="modal-buttons">
+        <button class="save-button" (click)="onSave()">Save</button>
+        <button class="cancel-button" (click)="close()">Cancel</button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>People Learning React</h2>
+  
+    <button class="create-button" (click)="openModal()">Create New Learner</button>
+  
+    <table class="react-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Topics Covered</th>
+          <th>Percentage</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let learner of learners; let i = index">
+          <td>{{ learner.name }}</td>
+          <td>{{ learner.topics }}</td>
+          <td>{{ learner.percentage }}%</td>
+          <td>
+            <button (click)="editLearner(i)">Edit</button>
+            <button (click)="deleteLearner(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <app-modal
+      [isVisible]="showModal"
+      [learner]="newLearner"
+      (closeModal)="closeModal()"
+      (saveLearner)="saveLearner($event)"
+    ></app-modal>
+  </div>
+  
