@@ -1,0 +1,82 @@
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ModalComponent } from '../modal/modal.component';
+
+@Component({
+  selector: 'app-flutter-list',
+  templateUrl: './flutter-list.component.html',
+  styleUrl: './flutter-list.component.scss',
+  imports: [CommonModule,FormsModule,ModalComponent],
+})
+export class FlutterListComponent {
+   learners: any[] = [];
+  
+    newLearner = { id: 0, name: '', topics: '', percentage: 0 };
+    isEditing = false;
+    editIndex: number | null = null;
+    showModal = false;
+  
+    ngOnInit(): void {
+      const savedLearners = localStorage.getItem('learners');
+      if (savedLearners) {
+        this.learners = JSON.parse(savedLearners);
+      }
+    }
+  
+    constructor(private router: Router) {}
+  
+    openModal() {
+      this.newLearner = { id: 0, name: '', topics: '', percentage: 0 };
+      this.showModal = true;
+      this.isEditing = false;
+    }
+  
+    addLearner(): void {
+      if (this.newLearner.name && this.newLearner.topics && this.newLearner.percentage !== null) {
+        this.learners.push({ ...this.newLearner });
+        localStorage.setItem('learners', JSON.stringify(this.learners));
+        this.newLearner = { id: 0, name: '', topics: '', percentage: 0 };
+      }
+    }
+  
+  
+    editLearner(index: number) {
+      this.newLearner = { ...this.learners[index] };
+      this.editIndex = index;
+      this.isEditing = true;
+      this.showModal = true;
+    }
+  
+  
+    saveLearner(learner: any) {
+      if (this.isEditing) {
+        this.learners[this.editIndex!] = { ...learner };
+      } else {
+        learner.id = this.learners.length + 1;
+        this.learners.push({ ...learner });
+      }
+    }
+  
+    closeModal() {
+      this.showModal = false;
+    }
+  
+    deleteLearner(index: number): void {
+      this.learners.splice(index, 1);
+      localStorage.setItem('learners', JSON.stringify(this.learners));
+    }
+  
+  
+    resetForm() {
+      this.newLearner = { id: 0, name: '', topics: '', percentage: 0 };
+      this.isEditing = false;
+      this.editIndex = null;
+    }
+  
+    goBack() {
+      this.router.navigate(['/']);
+    }
+
+}

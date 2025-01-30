@@ -32,22 +32,29 @@ export class HomeComponent {
   constructor(private router: Router) {}
 
   onSearch(): void {
-    const selectedTech = this.technologies.find(tech =>
-      tech.toLowerCase() === this.searchQuery.toLowerCase()
-    );
-
-    if (selectedTech) {
-      if (selectedTech === 'React') {
-        this.router.navigate(['/react-list']);
-      } else {
-        this.router.navigate(['/list', selectedTech]);
-      }
+    const routeMap: { [key: string]: string } = {
+      'react': '/react-list',
+      'angular': '/angular-list',
+      'flutter': '/flutter-list',
+      '.net': '/.NET'
+    };
+  
+    const searchKey = this.searchQuery.trim().toLowerCase();
+  
+    if (routeMap[searchKey]) {
+      this.router.navigate([routeMap[searchKey]]);
     } else {
       alert('Please enter a valid technology: Angular, React, Flutter, .NET');
     }
   }
+  
+  
 
   navigateToList(tech: string) {
     this.router.navigate(['/list', tech]);
+  }
+
+  logout(){
+    this.router.navigate(['/'])
   }
 }

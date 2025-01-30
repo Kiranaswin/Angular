@@ -36,13 +36,8 @@ export class ReactListComponent {
 
   addLearner(): void {
     if (this.newLearner.name && this.newLearner.topics && this.newLearner.percentage !== null) {
-      // Push the new learner to the learners array
       this.learners.push({ ...this.newLearner });
-
-      // Save the updated learners array to localStorage
       localStorage.setItem('learners', JSON.stringify(this.learners));
-
-      // Reset the newLearner form data
       this.newLearner = { id: 0, name: '', topics: '', percentage: 0 };
     }
   }
@@ -70,10 +65,7 @@ export class ReactListComponent {
   }
 
   deleteLearner(index: number): void {
-    // Remove learner from the array
     this.learners.splice(index, 1);
-
-    // Save the updated learners array to localStorage
     localStorage.setItem('learners', JSON.stringify(this.learners));
   }
 

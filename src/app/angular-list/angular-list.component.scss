@@ -1,0 +1,43 @@
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .angular-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  .angular-table th, .angular-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .angular-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .angular-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .create-button {
+    margin-left: 53rem;
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+  

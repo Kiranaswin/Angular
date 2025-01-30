@@ -2,10 +2,18 @@
 .container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 50px;
+    padding: 10px;
     text-align: center;
-    background-color: #cac3f3;
+    background-color: #a69fcc;
+
+    .shutdown-icon{
+        margin-left:75rem;
+        margin-top:1rem;
+        width:24px; 
+        height:24px;
+    }
   }
+  
   
   /* Search Box Styles */
   .search-container {
@@ -108,5 +116,6 @@
 //     100% { transform: translateX(-100%); }
 //   }
   
+
  
   

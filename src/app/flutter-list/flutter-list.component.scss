@@ -1,0 +1,65 @@
+.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+    font-size: 18px;
+  }
+  
+  .back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .back-button:hover {
+    background-color: #218838;
+  }
+
+  .flutter-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  .flutter-table th, .flutter-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .flutter-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .flutter-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .create-button {
+    margin-left: 53rem;
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+  
